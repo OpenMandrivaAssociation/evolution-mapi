@@ -1,5 +1,5 @@
 %define version 0.26.0.1
-%define branch (echo %version|perl -pe 's/(\d+\.\d+)\..*/$1/g')
+%define branch %(echo %version|perl -pe 's/(\d+\.\d+)\..*/$1/g')
 %define evo_version 2.26
 %define eds_version 2.26
 %define libmapi_version 0.8
