@@ -22,6 +22,7 @@ URL: http://www.gnome.org/projects/evolution-mapi/
 Source: http://ftp.gnome.org/pub/gnome/sources/evolution-mapi/%{branch}/evolution-mapi-%{version}.tar.bz2
 Requires: evolution >= %{evo_version}
 Requires: evolution-data-server >= %{eds_version}
+BuildRoot: {_tmppath}/%{name}-%{version}-root
 
 BuildRequires: evolution-data-server-devel >= %{eds_version}
 BuildRequires: evolution-devel >= %{evo_version}
