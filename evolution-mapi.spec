@@ -39,7 +39,7 @@ This package allows Evolution to interact with MS Exchange 2007 servers.
 
 %package devel
 Summary: Development files for building against %{name}
-Group: Development/Libraries
+Group: Development/C
 Requires: %{name} = %{version}-%{release}
 Requires: evolution-data-server-devel >= %{eds_version}
 Requires: evolution-devel >= %{evo_version}
