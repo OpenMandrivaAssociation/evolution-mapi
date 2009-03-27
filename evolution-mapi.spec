@@ -31,6 +31,7 @@ BuildRequires: intltool >= %{intltool_version}
 #BuildRequires: openchange-devel >= %{libmapi_version}
 BuildRequires: libmapi-devel >= %{libmapi_version}
 BuildRequires: tdb-devel
+BuildRequires: samba4-devel
 BuildRequires: gnome-pilot-devel
 
 %description
