@@ -18,7 +18,6 @@ Release: %mkrel 1
 Group: Networking/Mail
 Summary: Evolution extension for MS Exchange 2007 servers
 License: LGPLv2+
-Epoch: 0
 URL: http://www.gnome.org/projects/evolution-mapi/
 Source: http://ftp.gnome.org/pub/gnome/sources/evolution-mapi/%{branch}/evolution-mapi-%{version}.tar.bz2
 Requires: evolution >= %{evo_version}
@@ -29,7 +28,7 @@ BuildRequires: evolution-devel >= %{evo_version}
 BuildRequires: gettext
 BuildRequires: intltool >= %{intltool_version}
 #BuildRequires: openchange-devel >= %{libmapi_version}
-BuildRequires: lib64mapi-devel >= %{libmapi_version}
+BuildRequires: libmapi-devel >= %{libmapi_version}
 BuildRequires: gnome-pilot-devel
 
 %description
