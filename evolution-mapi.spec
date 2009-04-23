@@ -13,7 +13,7 @@
 
 Name: evolution-mapi
 Version: %version
-Release: %mkrel 1
+Release: %mkrel 2
 Group: Networking/Mail
 Summary: Evolution extension for MS Exchange 2007 servers
 License: LGPLv2+
@@ -42,7 +42,7 @@ Group: Development/C
 Requires: %{name} = %{version}-%{release}
 Requires: evolution-data-server-devel >= %{eds_version}
 Requires: evolution-devel >= %{evo_version}
-Requires: openchange-devel >= %{libmapi_version}
+#Requires: openchange-devel >= %{libmapi_version}
 
 %description devel
 Development files needed for building things which link against %{name}.
