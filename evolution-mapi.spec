@@ -1,19 +1,19 @@
-%define version 0.26.1
-%define evo_version 2.26
-%define eds_version 2.26
+%define version 0.27.1
+%define evo_version 2.27.1
+%define eds_version 2.27.1
 %define libmapi_version 0.8
 %define intltool_version 0.35.5
 
 %define __libtoolize /bin/true
 
-%define evo_major 2.26
+%define evo_major 2.28
 %define eds_major 1.2
 
 %define strict_build_settings 1
 
 Name: evolution-mapi
 Version: %version
-Release: %mkrel 2
+Release: %mkrel 1
 Group: Networking/Mail
 Summary: Evolution extension for MS Exchange 2007 servers
 License: LGPLv2+
@@ -71,7 +71,7 @@ CFLAGS="$CFLAGS \
 	-Werror-implicit-function-declaration"
 %endif
 
-%configure
+%configure2_5x
 %make
 
 %install
