@@ -1,4 +1,4 @@
-%define version 0.27.5
+%define version 0.27.90
 %define evo_version 2.27.2
 %define eds_version 2.27.2
 %define libmapi_version 0.8
