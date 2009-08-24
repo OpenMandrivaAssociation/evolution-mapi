@@ -30,6 +30,8 @@ BuildRequires: intltool >= %{intltool_version}
 BuildRequires: libmapi-devel >= %{libmapi_version}
 #gw: missing dep of libmapi: https://qa.mandriva.com/show_bug.cgi?id=53131
 BuildRequires: pkgconfig(tevent)
+#gw another .la dep
+BuildRequires: gnome-desktop-devel
 BuildRequires: tdb-devel
 BuildRequires: samba4-devel
 BuildRequires: gnome-pilot-devel
