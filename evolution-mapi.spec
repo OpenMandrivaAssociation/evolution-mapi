@@ -29,7 +29,7 @@ BuildRequires: gettext
 BuildRequires: intltool >= %{intltool_version}
 BuildRequires: libmapi-devel >= %{libmapi_version}
 #gw: missing dep of libmapi: https://qa.mandriva.com/show_bug.cgi?id=53131
-BuildRequires: talloc-devel
+BuildRequires: pkgconfig(tevent)
 BuildRequires: tdb-devel
 BuildRequires: samba4-devel
 BuildRequires: gnome-pilot-devel
