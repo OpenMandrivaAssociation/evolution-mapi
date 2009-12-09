@@ -1,12 +1,12 @@
-%define version 0.28.1
-%define evo_version 2.27.2
-%define eds_version 2.27.2
+%define version 0.29.3
+%define evo_version 2.29.2
+%define eds_version 2.29.2
 %define libmapi_version 0.8
 %define intltool_version 0.35.5
 
 %define __libtoolize /bin/true
 
-%define evo_major 2.28
+%define evo_major 2.30
 %define eds_major 1.2
 
 %define strict_build_settings 1
@@ -19,6 +19,7 @@ Summary: Evolution extension for MS Exchange 2007 servers
 License: LGPLv2+
 URL: http://www.gnome.org/projects/evolution-mapi/
 Source: http://ftp.gnome.org/pub/GNOME/sources/%name/%name-%{version}.tar.bz2
+Patch: evolution-mapi-dont-include-e_error.patch
 Requires: evolution >= %{evo_version}
 Requires: evolution-data-server >= %{eds_version}
 BuildRoot: {_tmppath}/%{name}-%{version}-root
@@ -52,6 +53,7 @@ Development files needed for building things which link against %{name}.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
 
