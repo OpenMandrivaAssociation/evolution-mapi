@@ -13,7 +13,7 @@
 
 Name: evolution-mapi
 Version: %version
-Release: %mkrel 2
+Release: %mkrel 3
 Group: Networking/Mail
 Summary: Evolution extension for MS Exchange 2007 servers
 License: LGPLv2+
