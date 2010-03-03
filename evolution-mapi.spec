@@ -32,6 +32,7 @@ BuildRequires: evolution-data-server-devel >= %{eds_version}
 BuildRequires: evolution-devel >= %{evo_version}
 BuildRequires: gettext
 BuildRequires: intltool >= %{intltool_version}
+BuildRequires: gtk-doc
 BuildRequires: libmapi-devel >= %{libmapi_version}
 #gw: missing dep of libmapi: https://qa.mandriva.com/show_bug.cgi?id=53131
 BuildRequires: pkgconfig(tevent)
