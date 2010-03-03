@@ -4,12 +4,15 @@
 %define libmapi_version 0.9
 %define intltool_version 0.35.5
 
-%define __libtoolize /bin/true
-
 %define evo_major 2.30
 %define eds_major 1.2
 
 %define strict_build_settings 1
+
+%define api 1.0
+%define major 0
+%define libname %mklibname exchangemapi %api %major
+%define develname %mklibname -d exchangemapi
 
 Name: evolution-mapi
 Version: %version
@@ -19,8 +22,10 @@ Summary: Evolution extension for MS Exchange 2007 servers
 License: LGPLv2+
 URL: http://www.gnome.org/projects/evolution-mapi/
 Source: http://ftp.gnome.org/pub/GNOME/sources/%name/%name-%{version}.tar.bz2
+Patch: evolution-mapi-0.29.91-fix-linking.patch
 Requires: evolution >= %{evo_version}
 Requires: evolution-data-server >= %{eds_version}
+Requires: %libname >= %version-%release
 BuildRoot: {_tmppath}/%{name}-%{version}-root
 
 BuildRequires: evolution-data-server-devel >= %{eds_version}
@@ -39,19 +44,31 @@ BuildRequires: gnome-pilot-devel
 %description
 This package allows Evolution to interact with MS Exchange 2007 servers.
 
-%package devel
+%package -n %libname
+Summary: Shared library of %name
+Group: System/Libraries
+
+%description -n %libname
+This package allows Evolution to interact with MS Exchange 2007 servers.
+
+
+%package -n %develname
 Summary: Development files for building against %{name}
 Group: Development/C
-Requires: %{name} = %{version}-%{release}
+Requires: %{libname} = %{version}-%{release}
 Requires: evolution-data-server-devel >= %{eds_version}
 Requires: evolution-devel >= %{evo_version}
-#Requires: openchange-devel >= %{libmapi_version}
+Provides: %name-%devel = %version-%release
+Obsoletes: %name-%devel = %version-%release
+Provides: lib%name-devel = %version-%release
 
-%description devel
+%description -n %develname
 Development files needed for building things which link against %{name}.
 
 %prep
 %setup -q
+%apply_patches
+autoreconf -fi
 
 %build
 
@@ -81,21 +98,16 @@ CFLAGS="$CFLAGS \
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
-find $RPM_BUILD_ROOT/%{_libdir} -name '*.la' -exec rm {} \;
+find $RPM_BUILD_ROOT/%{_libdir}/evo* -name '*.la' -exec rm {} \;
 
 %find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -p /sbin/ldconfig
-
-%postun -p /sbin/ldconfig
-
 %files -f %{name}.lang
 %defattr(-,root,root,-)
 %doc AUTHORS ChangeLog COPYING INSTALL README
-%{_libdir}/libexchangemapi-1.0.so.*
 %{_libdir}/evolution/%{evo_major}/plugins/*
 %{_libdir}/evolution-data-server-%{eds_major}/camel-providers/libcamelmapi.so
 %{_libdir}/evolution-data-server-%{eds_major}/camel-providers/libcamelmapi.urls
@@ -104,8 +116,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/evolution-data-server-%{eds_major}/extensions/libecalbackendmapi.so
 %{_datadir}/evolution-data-server-%{evo_major}/mapi
 
-%files devel
+%files -n %libname
+%defattr(-,root,root,-)
+%{_libdir}/libexchangemapi-%api.so.%{major}*
+
+%files -n %develname
 %defattr(-,root,root,-)
 %{_includedir}/evolution-data-server-%{evo_major}/mapi
 %{_libdir}/libexchangemapi-1.0.so
+%{_libdir}/libexchangemapi-1.0.la
 %{_libdir}/pkgconfig/libexchangemapi-1.0.pc
