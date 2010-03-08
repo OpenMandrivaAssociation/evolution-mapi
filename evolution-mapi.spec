@@ -1,4 +1,4 @@
-%define version 0.29.91
+%define version 0.29.92
 %define evo_version 2.29.4
 %define eds_version 2.29.4
 %define libmapi_version 0.9
@@ -16,7 +16,7 @@
 
 Name: evolution-mapi
 Version: %version
-Release: %mkrel 2
+Release: %mkrel 1
 Group: Networking/Mail
 Summary: Evolution extension for MS Exchange 2007 servers
 License: LGPLv2+
