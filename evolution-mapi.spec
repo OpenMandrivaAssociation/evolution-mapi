@@ -58,7 +58,7 @@ Requires: %{libname} = %{version}-%{release}
 Requires: evolution-data-server-devel >= %{eds_version}
 Requires: evolution-devel >= %{evo_version}
 Provides: %name-devel = %version-%release
-Obsoletes: %name-devel = %version-%release
+Obsoletes: %name-devel
 Provides: lib%name-devel = %version-%release
 
 %description -n %develname
