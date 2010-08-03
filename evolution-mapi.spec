@@ -1,10 +1,10 @@
-%define version 0.31.5
+%define version 0.31.6
 %define evo_version 2.31.5
 %define eds_version 2.31.1
 %define libmapi_version 0.9
 %define intltool_version 0.35.5
 
-%define evo_major 3.0
+%define evo_major 2.32
 %define eds_major 1.2
 
 %define strict_build_settings 1
@@ -110,7 +110,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/evolution-data-server-%{eds_major}/camel-providers/libcamelmapi.so
 %{_libdir}/evolution-data-server-%{eds_major}/camel-providers/libcamelmapi.urls
 %{_libdir}/evolution-data-server-%{eds_major}/extensions/libebookbackendmapi.so
-%{_libdir}/evolution-data-server-%{eds_major}/extensions/libebookbackendmapigal.so
 %{_libdir}/evolution-data-server-%{eds_major}/extensions/libecalbackendmapi.so
 %{_datadir}/evolution-data-server-%{evo_major}/mapi
 
