@@ -1,10 +1,10 @@
-%define version 0.32.2
-%define evo_version 2.31.5
-%define eds_version 2.31.1
+%define version 3.4.1
+%define evo_version 3.4.1
+%define eds_version 3.4.1
 %define libmapi_version 0.9
 %define intltool_version 0.35.5
 
-%define evo_major 2.32
+%define evo_major 3.4
 %define eds_major 1.2
 
 %define strict_build_settings 1
@@ -16,13 +16,12 @@
 
 Name: evolution-mapi
 Version: %version
-Release: %mkrel 1
+Release: 1
 Group: Networking/Mail
-Summary: Evolution extension for MS Exchange 2007 servers
+Summary: Evolution extension for MS Exchange 2007/2010 servers
 License: LGPLv2+
 URL: http://www.gnome.org/projects/evolution-mapi/
-Source: http://ftp.gnome.org/pub/GNOME/sources/%name/%name-%{version}.tar.bz2
-Patch0: evolution-mapi-0.31.2-fix-linking.patch
+Source: http://ftp.gnome.org/pub/GNOME/sources/%name/%name-%{version}.tar.xz
 Requires: evolution >= %{evo_version}
 Requires: evolution-data-server >= %{eds_version}
 Requires: %libname >= %version-%release
@@ -40,14 +39,14 @@ BuildRequires: tdb-devel
 BuildRequires: samba4-devel
 
 %description
-This package allows Evolution to interact with MS Exchange 2007 servers.
+This package allows Evolution to interact with MS Exchange 2007/2010 servers.
 
 %package -n %libname
 Summary: Shared library of %name
 Group: System/Libraries
 
 %description -n %libname
-This package allows Evolution to interact with MS Exchange 2007 servers.
+This package allows Evolution to interact with MS Exchange 2007/2010 servers.
 
 
 %package -n %develname
@@ -65,8 +64,6 @@ Development files needed for building things which link against %{name}.
 
 %prep
 %setup -q
-%apply_patches
-autoreconf -fi
 
 %build
 
