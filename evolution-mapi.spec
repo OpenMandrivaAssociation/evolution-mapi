@@ -107,10 +107,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %doc AUTHORS ChangeLog COPYING INSTALL README
 %{_libdir}/evolution/%{evo_major}/plugins/*
-%{_libdir}/evolution-data-server-%{eds_major}/camel-providers/libcamelmapi.so
-%{_libdir}/evolution-data-server-%{eds_major}/camel-providers/libcamelmapi.urls
-%{_libdir}/evolution-data-server-%{eds_major}/extensions/libebookbackendmapi.so
-%{_libdir}/evolution-data-server-%{eds_major}/extensions/libecalbackendmapi.so
+%{_libdir}/evolution-data-server/camel-providers/libcamelmapi.so
+%{_libdir}/evolution-data-server/camel-providers/libcamelmapi.urls
+%{_libdir}/evolution-data-server/addressbook-backends/libebookbackendmapi.so
+%{_libdir}/evolution-data-server/calendar-backends/libecalbackendmapi.so
 %{_datadir}/evolution-data-server-%{evo_major}/mapi
 
 %files -n %libname
