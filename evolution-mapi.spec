@@ -121,5 +121,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %{_includedir}/evolution-data-server-%{evo_major}/mapi
 %{_libdir}/libexchangemapi-1.0.so
-%{_libdir}/libexchangemapi-1.0.la
 %{_libdir}/pkgconfig/libexchangemapi-1.0.pc
