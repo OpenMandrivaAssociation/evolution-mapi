@@ -7,7 +7,7 @@
 %define evo_major 3.4
 %define eds_major 1.2
 
-%define strict_build_settings 1
+%define strict_build_settings 0
 
 %define api 1.0
 %define major 0
