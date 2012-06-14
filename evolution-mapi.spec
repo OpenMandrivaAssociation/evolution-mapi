@@ -30,6 +30,7 @@ BuildRoot: {_tmppath}/%{name}-%{version}-root
 BuildRequires: evolution-data-server-devel >= %{eds_version}
 BuildRequires: evolution-devel >= %{evo_version}
 BuildRequires: pkgconfig(libebackend-1.2)
+BuildRequires: pkgconfig(libedata-cal-1.2)
 BuildRequires: gettext
 BuildRequires: intltool >= %{intltool_version}
 BuildRequires: gtk-doc
