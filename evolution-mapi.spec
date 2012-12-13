@@ -1,4 +1,5 @@
-%define evo_major 3.4
+%define url_ver %(echo %{version}|cut -d. -f1,2)
+%define evo_major 3.6
 %define eds_major 1.2
 
 %define strict_build_settings 0
@@ -10,25 +11,25 @@
 
 Summary:	Evolution extension for MS Exchange 2007/2010 servers
 Name:		evolution-mapi
-Version:	3.4.4
+Version:	3.6.2
 Release:	1
 Group:		Networking/Mail
 License:	LGPLv2+
 URL:		http://www.gnome.org/projects/evolution-mapi/
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
 
-BuildRequires: gettext
-BuildRequires: gtk-doc
-BuildRequires: intltool
-BuildRequires: evolution-data-server-devel
-BuildRequires: pkgconfig(evolution-shell-3.0)
-BuildRequires: pkgconfig(libebackend-1.2)
-BuildRequires: pkgconfig(libedata-cal-1.2)
-BuildRequires: pkgconfig(libedata-book-1.2)
-BuildRequires: libmapi-devel
-BuildRequires: gnome-desktop-devel
-BuildRequires: tdb-devel
-BuildRequires: samba4-devel
+BuildRequires:	gettext
+BuildRequires:	gtk-doc
+BuildRequires:	intltool
+BuildRequires:	pkgconfig(evolution-data-server-1.2) > %{evo_major}
+BuildRequires:	pkgconfig(evolution-shell-3.0)
+BuildRequires:	pkgconfig(libebackend-1.2)
+BuildRequires:	pkgconfig(libedata-cal-1.2)
+BuildRequires:	pkgconfig(libedata-book-1.2)
+BuildRequires:	pkgconfig(libmapi)
+BuildRequires:	pkgconfig(talloc)
+BuildRequires:	pkgconfig(tdb)
+#BuildRequires:	gnome-desktop-devel
 
 Requires:	evolution
 Requires:	evolution-data-server
@@ -37,17 +38,17 @@ Requires:	evolution-data-server
 This package allows Evolution to interact with MS Exchange 2007/2010 servers.
 
 %package -n %{libname}
-Summary: Shared library of %{name}
-Group: System/Libraries
+Summary:	Shared library of %{name}
+Group:		System/Libraries
 
 %description -n %{libname}
 This package allows Evolution to interact with MS Exchange 2007/2010 servers.
 
 %package -n %{devname}
-Summary: Development files for building against %{name}
-Group: Development/C
-Requires: %{libname} = %{version}-%{release}
-Provides: %{name}-devel = %version-%release
+Summary:	Development files for building against %{name}
+Group:		Development/C
+Requires:	%{libname} = %{version}-%{release}
+Provides:	%{name}-devel = %version-%release
 
 %description -n %{devname}
 Development files needed for building things which link against %{name}.
@@ -100,5 +101,6 @@ find $RPM_BUILD_ROOT/%{_libdir}/evo* -name '*.la' -exec rm {} \;
 
 %files -n %{devname}
 %{_includedir}/evolution-data-server-%{evo_major}/mapi
-%{_libdir}/libexchangemapi-1.0.so
-%{_libdir}/pkgconfig/libexchangemapi-1.0.pc
+%{_libdir}/libexchangemapi-%{api}.so
+%{_libdir}/pkgconfig/libexchangemapi-%{api}.pc
+
