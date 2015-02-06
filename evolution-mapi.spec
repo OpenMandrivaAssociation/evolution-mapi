@@ -12,7 +12,7 @@
 Summary:	Evolution extension for MS Exchange 2007/2010 servers
 Name:		evolution-mapi
 Version:	3.10.4
-Release:	1
+Release:	2
 Group:		Networking/Mail
 License:	LGPLv2+
 URL:		http://www.gnome.org/projects/evolution-mapi/
