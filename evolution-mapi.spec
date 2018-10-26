@@ -1,5 +1,5 @@
 %define url_ver %(echo %{version}|cut -d. -f1,2)
-%define evo_major 3.10
+%define evo_major 3.30
 %define eds_major 1.2
 
 %define strict_build_settings 0
@@ -11,8 +11,8 @@
 
 Summary:	Evolution extension for MS Exchange 2007/2010 servers
 Name:		evolution-mapi
-Version:	3.10.4
-Release:	2
+Version:	3.30.2
+Release:	1
 Group:		Networking/Mail
 License:	LGPLv2+
 URL:		http://www.gnome.org/projects/evolution-mapi/
