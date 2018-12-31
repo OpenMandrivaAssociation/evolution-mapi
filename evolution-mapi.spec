@@ -11,7 +11,7 @@
 
 Summary:	Evolution extension for MS Exchange 2007/2010 servers
 Name:		evolution-mapi
-Version:	3.30.2
+Version:	3.30.3
 Release:	1
 Group:		Networking/Mail
 License:	LGPLv2+
