@@ -15,7 +15,7 @@ Version:	3.10.4
 Release:	2
 Group:		Networking/Mail
 License:	LGPLv2+
-URL:		http://www.gnome.org/projects/evolution-mapi/
+URL:		https://www.gnome.org/projects/evolution-mapi/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires:	gettext
