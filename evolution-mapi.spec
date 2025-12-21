@@ -18,6 +18,11 @@ License:	LGPLv2+
 URL:		https://www.gnome.org/projects/evolution-mapi/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	gettext
 BuildRequires:	gtk-doc
 BuildRequires:	intltool
